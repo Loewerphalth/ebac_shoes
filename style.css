@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: #f1f1f1;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    background: #1e4fcd;
+    color: white;
+    padding: 20px 0;
+  }
+  
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .sobre-a-loja {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+  }
+  
+  .sobre-a-loja img {
+    width: 50%;
+    border-radius: 10px;
+  }
+  
+  .sobre-a-loja div {
+    width: 50%;
+  }
+  
+  .produtos h2 {
+    margin: 40px 0 20px;
+    color: #1e4fcd;
+  }
+  
+  .lista-produtos {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .produto {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1 1 23%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+    min-height: 420px; /* Ajuste conforme necessário */
+  } 
+
+  .produto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  
+  .produto h3 {
+    margin: 10px 0;
+  }
+  
+  .produto p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 50px; /* espaço para o botão fixo */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* mostra no máximo  linhas */
+    line-clamp: 2; /* added for compatibility */
+    -webkit-box-orient: vertical;
+    box-orient: vertical; /* also add standard property for compatibility */
+  }
+  
+  
+  .produto button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background: #1e4fcd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 1023px) and (min-width: 641px) {
+    /* Seção Sobre a Loja em coluna */
+    .sobre-a-loja {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .sobre-a-loja img,
+    .sobre-a-loja div {
+      width: 100%;
+    }
+  
+    /* Lista de produtos em 2 colunas */
+    .lista-produtos {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    .produto {
+      flex: 1 1 48%;
+      margin-bottom: 20px;
+      min-height: 400px; /* Reduza se necessário */
+    }
+  
+    .produto button {
+      left: 15px;
+      right: 15px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    /* Seção Sobre a Loja em coluna com padding menor */
+    .sobre-a-loja {
+      flex-direction: column;
+      text-align: center;
+      padding: 10px;
+    }
+  
+    .sobre-a-loja img,
+    .sobre-a-loja div {
+      width: 100%;
+    }
+  
+    /* Produtos em 1 coluna */
+    .lista-produtos {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .produto {
+      flex: 1 1 100%;
+      min-height: auto;
+      margin-bottom: 20px;
+    }
+  
+    .produto button {
+      left: 15px;
+      right: 15px;
+    }
+  
+    header .container {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    nav a {
+      margin: 0 10px;
+    }
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
